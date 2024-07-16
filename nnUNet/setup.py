@@ -27,6 +27,7 @@ setup(name='nnunet',
       ],
       entry_points={
           'console_scripts': [
+              'generate_task_json = nnunet.dataset_conversion.generate_task_json:main',
               'nnUNet_convert_decathlon_task = nnunet.experiment_planning.nnUNet_convert_decathlon_task:main',
               'nnUNet_plan_and_preprocess = nnunet.experiment_planning.nnUNet_plan_and_preprocess:main',
               'nnUNet_train = nnunet.run.run_training:main',

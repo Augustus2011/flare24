@@ -16,6 +16,7 @@
 from nnunet.paths import nnUNet_raw_data, preprocessing_output_dir, nnUNet_cropped_data, network_training_output_dir
 from batchgenerators.utilities.file_and_folder_operations import *
 import numpy as np
+import os
 
 
 def convert_id_to_task_name(task_id: int):
