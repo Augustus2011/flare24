@@ -157,7 +157,7 @@ class DataSplitter:
     splitter = DataSplitter(img, msk, output, 0.7, 0.2, 0.1, delete_input=False)
     splitter.run()
     '''
-    def __init__(self, images_dir, labels_dir, output_dir, train_ratio=0.7, valid_ratio=0.2, test_ratio=0.1, delete_input=False):
+    def __init__(self, images_dir, labels_dir, output_dir, train_ratio=0.8, valid_ratio=0.2, test_ratio=0.0, delete_input=False):
         self.images_dir = images_dir
         self.labels_dir = labels_dir
         self.output_dir = output_dir
@@ -190,10 +190,10 @@ class DataSplitter:
         random.shuffle(data)
         total = len(data)
         train_end = int(total * self.train_ratio)
-        valid_end = train_end + int(total * self.valid_ratio)
+        valid_end = int(total * self.valid_ratio)
 
         train_data = data[:train_end]
-        valid_data = data[train_end:valid_end]
+        valid_data = data[train_end:]
         test_data = data[valid_end:] if self.test_ratio > 0 else []
 
         return {'train': train_data, 'valid': valid_data, 'test': test_data}
@@ -287,14 +287,16 @@ class DataRenamer:
         #print(self.path_to_train_image)
         #print(self.path_to_train_labels)
 
-        output_path  = f"{path_to_output}/Dataset{self.dataset_id}_{self.structure}"
+        output_path  = f"{path_to_output}/Task{self.dataset_id}_{self.structure}"
         self.path_to_nnunet_imagesTr = os.path.join(output_path, "imagesTr")
         self.path_to_nnunet_labelsTr = os.path.join(output_path, "labelsTr")
         self.path_to_nnunet_imagesTs = os.path.join(output_path, "imagesTs")
+        self.path_to_nnunet_labelsTs = os.path.join(output_path, "labelsTs")
 
         os.makedirs(self.path_to_nnunet_imagesTr, exist_ok=True)
         os.makedirs(self.path_to_nnunet_imagesTs, exist_ok=True)
         os.makedirs(self.path_to_nnunet_labelsTr, exist_ok=True)
+        os.makedirs(self.path_to_nnunet_labelsTs, exist_ok=True)
     
     def rename_train_data(self):
         print(self.path_to_train_image, self.path_to_train_labels)
@@ -331,7 +333,7 @@ class DataRenamer:
             # Rename the testing segmentations
             print(f"segmentation file: {seg}")
             new_seg_filename = f"{self.structure}_{str(i).zfill(3)}.nii.gz"
-            new_seg_filepath = os.path.join(self.path_to_nnunet_imagesTs, new_seg_filename)
+            new_seg_filepath = os.path.join(self.path_to_nnunet_labelsTs, new_seg_filename)
             print(f"new segmentation file: {new_seg_filepath}") 
 
             shutil.copy(seg, new_seg_filepath)
