@@ -206,7 +206,7 @@ def verify_dataset_integrity(folder: str, num_processes: int = 8) -> None:
             zip(labelfiles, [reader_writer_class] * len(labelfiles), [expected_labels] * len(labelfiles))
         )
         if not all(result):
-            raise RuntimeError(
+            raise RuntimeError( 
                 'Some segmentation images contained unexpected labels. Please check text output above to see which one(s).')
 
         # check whether shapes and spacings match between images and labels

@@ -1,7 +1,10 @@
 from utils.dataset import DataRenamer,DataSplitter
 
 
+
 if __name__=="__main__":
+    
+
     img="/Users/kunkerdthaisong/intern_cariva/flare24/datasets/nnunet_data/segmentation/volumes/"
     msk="/Users/kunkerdthaisong/intern_cariva/flare24/datasets/nnunet_data/segmentation/segmentations/"
     output="/Users/kunkerdthaisong/intern_cariva/flare24/datasets/nnunet_data/segmentation/split/"
@@ -12,10 +15,19 @@ if __name__=="__main__":
 
     #output="/Users/kunkerdthaisong/intern_cariva/flare24/datasets/nnunet_data/segmentation/split"
     nnunet_data="/Users/kunkerdthaisong/intern_cariva/flare24/datasets/nnunet_data/nnUNet_raw"
-    renamer=DataRenamer(path_to_input=output,path_to_output=nnunet_data,dataset_id=501,structure="FLARE")
+    renamer=DataRenamer(path_to_input=output,path_to_output=nnunet_data,dataset_id=100,structure="FLARE")
     renamer.run()
 
-
+    # def generate_dataset_json(output_folder: str,
+    #                       channel_names: dict,
+    #                       labels: dict,
+    #                       num_training_cases: int,
+    #                       file_ending: str,
+    #                       regions_class_order: Tuple[int, ...] = None,
+    #                       dataset_name: str = None, reference: str = None, release: str = None, license: str = None,
+    #                       description: str = None,
+    #                       overwrite_image_reader_writer: str = None, **kwargs):
+    
 
 
 # export nnUNet_raw="./datasets/nnunet_data/nnUNet_raw"

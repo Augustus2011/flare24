@@ -287,7 +287,7 @@ class DataRenamer:
         #print(self.path_to_train_image)
         #print(self.path_to_train_labels)
 
-        output_path  = f"{path_to_output}/Task{self.dataset_id}_{self.structure}"
+        output_path  = f"{path_to_output}/Dataset{self.dataset_id}_{self.structure}"
         self.path_to_nnunet_imagesTr = os.path.join(output_path, "imagesTr")
         self.path_to_nnunet_labelsTr = os.path.join(output_path, "labelsTr")
         self.path_to_nnunet_imagesTs = os.path.join(output_path, "imagesTs")

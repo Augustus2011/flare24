@@ -93,6 +93,7 @@ class DatasetFingerprintExtractor(object):
         images, properties_images = rw.read_images(image_files)
         segmentation, properties_seg = rw.read_seg(segmentation_file)
 
+        
         # we no longer crop and save the cropped images before this is run. Instead we run the cropping on the fly.
         # Downside is that we need to do this twice (once here and once during preprocessing). Upside is that we don't
         # need to save the cropped data anymore. Given that cropping is not too expensive it makes sense to do it this
