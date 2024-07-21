@@ -279,10 +279,10 @@ class DataRenamer:
         self.dataset_id = dataset_id
         self.structure = structure
 
-        self.path_to_train_image = glob(os.path.join(path_to_input, "train/images/*.nii.gz"))
-        self.path_to_train_labels = glob(os.path.join(path_to_input, "train/labels/*.nii.gz"))
-        self.path_to_test_image  = glob(os.path.join(path_to_input, "valid/images/*.nii.gz"))
-        self.path_to_test_labels  = glob(os.path.join(path_to_input, "valid/labels/*.nii.gz"))
+        self.path_to_train_image = sorted(glob(os.path.join(path_to_input, "train/images/*.nii.gz")))
+        self.path_to_train_labels = sorted(glob(os.path.join(path_to_input, "train/labels/*.nii.gz")))
+        self.path_to_test_image  = sorted(glob(os.path.join(path_to_input, "valid/images/*.nii.gz")))
+        self.path_to_test_labels  = sorted(glob(os.path.join(path_to_input, "valid/labels/*.nii.gz")))
         #print(path_to_input)
         #print(self.path_to_train_image)
         #print(self.path_to_train_labels)
