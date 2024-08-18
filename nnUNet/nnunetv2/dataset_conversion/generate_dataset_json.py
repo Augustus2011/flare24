@@ -103,7 +103,7 @@ def generate_dataset_json(output_folder: str,
     save_json(dataset_json, join(output_folder, 'dataset.json'), sort_keys=False)
 
 def main():
-    generate_dataset_json(output_folder="/Users/kunkerdthaisong/intern_cariva/flare24/datasets/nnunet_data/nnUNet_raw/Dataset100_FLARE",labels=
+    generate_dataset_json(output_folder="/mnt/ai_neuro/august_kun/miccai/flare24/datasets/nnunet_data/nnUNet_raw/Dataset100_FLARE",labels=
                     {"background": 0,
                     "Liver": 1,
                     "Right Kidney": 2,
@@ -118,4 +118,4 @@ def main():
                     "Stomach": 11,
                     "Duodenum": 12,
                     "Left Kidney": 13,
-                    },channel_names={"CT":0},num_training_cases=50,file_ending=".nii.gz",dataset_name="FLARE100")
+                    },channel_names={"CT":"ct"},num_training_cases=50,file_ending=".nii.gz",dataset_name="FLARE100")

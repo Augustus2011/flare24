@@ -1,6 +1,6 @@
 {
     "channel_names": {
-        "ct": 0
+        "CT": "ct"
     },
     "labels": {
         "background": 0,
@@ -18,8 +18,7 @@
         "Duodenum": 12,
         "Left Kidney": 13
     },
-    "numTraining": 50,
+    "numTraining": 150,
     "file_ending": ".nii.gz",
-    "name": "Dataset101",
-    "overwrite_image_reader_writer": "SimpleITKIO"
+    "name": "FLARE102"
 }

@@ -3,6 +3,11 @@ import batchgenerators
 from batchgenerators.utilities.file_and_folder_operations import subdirs
 import os
 
+
+import torch
+
+
+print(torch.cuda.is_available())
 # file_path = "/Users/kunkerdthaisong/intern_cariva/flare24/datasets/nnunet_data/nnUNet_raw/Dataset001_SPINE/labelsTr/SPINE_000.nii.gz"
 
 # try:

@@ -83,7 +83,7 @@ class NibabelIO(BaseReaderWriter):
             },
             'spacing': spacings_for_nnunet[0]
         }
-        return np.vstack(images, dtype=np.float32, casting='unsafe'), dict
+        return np.vstack(images), dict
 
     def read_seg(self, seg_fname: str) -> Tuple[np.ndarray, dict]:
         return self.read_images((seg_fname, ))

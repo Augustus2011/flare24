@@ -304,7 +304,7 @@ class DataRenamer:
 
             # Rename the training segmentations
             print(f"Segmentation file: {seg}")
-            new_seg_filename = f"{self.structure}_{str(i).zfill(3)}.nii.gz"
+            new_seg_filename = f"{self.structure}_{str(i).zfill(4)}.nii.gz"
             
             new_seg_filepath = os.path.join(self.path_to_nnunet_labelsTr, new_seg_filename) 
             print(f"new segmenation file: {new_seg_filepath}")
@@ -313,7 +313,7 @@ class DataRenamer:
 
             # Rename the training volumes
             print(f"Volume file: {vol}")
-            new_volume_filename = f"{self.structure}_{str(i).zfill(3)}_0000.nii.gz"
+            new_volume_filename = f"{self.structure}_{str(i).zfill(4)}_0000.nii.gz"
             new_volume_filepath = os.path.join(self.path_to_nnunet_imagesTr, new_volume_filename)
             print(f"new volume file: {new_volume_filepath}") 
 
@@ -324,7 +324,7 @@ class DataRenamer:
 
             # Rename the testing volumes
             print(f"Volume file: {vol}")
-            new_volume_filename = f"{self.structure}_{str(i).zfill(3)}_0000.nii.gz"
+            new_volume_filename = f"{self.structure}_{str(i).zfill(4)}_0000.nii.gz"
             new_volume_filepath = os.path.join(self.path_to_nnunet_imagesTs, new_volume_filename)
             print(f"new volume file: {new_volume_filepath}") 
 
@@ -332,7 +332,7 @@ class DataRenamer:
 
             # Rename the testing segmentations
             print(f"segmentation file: {seg}")
-            new_seg_filename = f"{self.structure}_{str(i).zfill(3)}.nii.gz"
+            new_seg_filename = f"{self.structure}_{str(i).zfill(4)}.nii.gz"
             new_seg_filepath = os.path.join(self.path_to_nnunet_labelsTs, new_seg_filename)
             print(f"new segmentation file: {new_seg_filepath}") 
 

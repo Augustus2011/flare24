@@ -12,9 +12,9 @@ from nnunetv2.imageio.base_reader_writer import BaseReaderWriter
 from nnunetv2.utilities.find_class_by_name import recursive_find_python_class
 
 LIST_OF_IO_CLASSES = [
-    NaturalImage2DIO,
-    SimpleITKIO,
-    Tiff3DIO,
+    #NaturalImage2DIO,
+    #SimpleITKIO,
+    #Tiff3DIO,
     NibabelIO,
     NibabelIOWithReorient
 ]
