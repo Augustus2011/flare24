@@ -1,0 +1,16 @@
+# .dockerignore
+
+# Ignore node_modules and build directories
+node_modules
+build
+
+
+# Ignore all log files
+*.log
+
+# Ignore git and temporary files
+.git
+.gitignore
+*.swp
+*.tmp
+*.bak

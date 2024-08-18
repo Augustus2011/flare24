@@ -1,0 +1,69 @@
+[project]
+name = "contour-diff"
+version = "1.0"
+requires-python = ">=3.9"
+description = "contour diff"
+readme = "readme.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Yuwen Chen" },
+    { name = "Maciej Mazurowski" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache-2.0 license",
+    "Operating System :: OS Independent"
+]
+keywords = [
+    "deep learning",
+    "image segmentation",
+    "semantic segmentation",
+    "diffusers"
+]
+dependencies = [
+    "acvl-utils>=0.2,<0.3",
+    "dynamic-network-architectures>=0.3.1,<0.4",
+    "tqdm",
+    "dicom2nifti",
+    "scipy",
+    "diffusers",
+    "batchgenerators>=0.25",
+    "numpy",
+    "scikit-learn",
+    "scikit-image>=0.19.3",
+    "SimpleITK>=2.2.1",
+    "pandas",
+    "graphviz",
+    "tifffile",
+    "requests",
+    "matplotlib",
+    "seaborn",
+    "imagecodecs",
+    "yacs",
+    "batchgeneratorsv2",
+    "einops",
+    "opencv-python",
+    "safetensors[torch]"
+]
+
+[project.urls]
+homepage = "https://github.com/mazurowski-lab/ContourDiff"
+repository = "https://github.com/mazurowski-lab/ContourDiff"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pre-commit"
+]
+
+[build-system]
+requires = ["setuptools>=67.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["data*", "inputs*", "outputs*"]
+
+[tool.codespell]
+skip = ".git,*.pdf,*.svg"
